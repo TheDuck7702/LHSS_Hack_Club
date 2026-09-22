@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laurel Heights Secondary School Hack Club | LHSS Hack Club</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        hcRed: '#ec3750',
+                        hcRedDark: '#b02035',
+                        hcDark: '#0e0e12',
+                        hcCard: '#16161e',
+                        hcCardHover: '#1f1f2b',
+                        hcYellow: '#f1c40f',
+                        hcGreen: '#33d6a6',
+                        hcCyan: '#5bc0de',
+                        hcBlue: '#338da6',
+                        hcPurple: '#a633d6',
+                        hcTextMuted: '#8492a6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #0e0e12;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Dark Grid Background */
+        .bg-grid-pattern {
+            background-size: 36px 36px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        }
+
+        /* White Backlight Halo Glow Effect for Main Hero Container */
+        .white-backlight-container {
+            position: relative;
+        }
+
+        .white-backlight-container::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.08) 60%, transparent 80%);
+            border-radius: 28px;
+            filter: blur(20px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Glowing Red Box Effect */
+        .glow-red {
+            box-shadow: 0 0 25px rgba(236, 55, 80, 0.45);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #272730;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ec3750;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-grid-pattern text-gray-100 antialiased selection:bg-hcRed selection:text-white">
+
+    <!-- TOP HACK CLUB FLAG LOGO -->
+    <a href="https://hackclub.com" target="_blank" class="fixed top-0 left-4 sm:left-8 z-50 group transform transition-transform hover:translate-y-1">
+        <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club Flag" class="w-28 sm:w-36 drop-shadow-2xl">
+    </a>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-hcDark/90 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo & Title Space (Pushed right to clear flag) -->
+            <div class="flex items-center space-x-3 ml-28 sm:ml-36 md:ml-40">
+                <div class="bg-hcRed text-white font-black px-2.5 py-1 rounded-lg text-lg tracking-tight shadow-md flex items-center space-x-1">
+                    <span>LHSS</span>
+                    <span class="text-xs font-mono bg-black/30 px-1.5 py-0.5 rounded">HC</span>
+                </div>
+                <div class="hidden sm:block">
+                    <h1 class="font-bold text-sm leading-tight text-white">Laurel Heights Hack Club</h1>
+                    <p class="text-xs text-hcTextMuted">Waterloo, ON • Room 3411</p>
+                </div>
+            </div>
+
+            <!-- Main Navigation Links (Boba Button Removed from Nav) -->
+            <nav class="hidden lg:flex items-center space-x-1 font-medium text-sm">
+                <button onclick="switchTab('home')" id="nav-home" class="nav-btn px-4 py-2 rounded-xl transition text-white bg-white/10 font-bold">Home</button>
+                <button onclick="switchTab('perks')" id="nav-perks" class="nav-btn px-4 py-2 rounded-xl transition text-gray-300 hover:text-white hover:bg-white/5">YSWS & Perks</button>
+                <button onclick="switchTab('projects')" id="nav-projects" class="nav-btn px-4 py-2 rounded-xl transition text-gray-300 hover:text-white hover:bg-white/5">Projects</button>
+                <button onclick="switchTab('calendar')" id="nav-calendar" class="nav-btn px-4 py-2 rounded-xl transition text-gray-300 hover:text-white hover:bg-white/5">Calendar</button>
+                <button onclick="switchTab('info')" id="nav-info" class="nav-btn px-4 py-2 rounded-xl transition text-gray-300 hover:text-white hover:bg-white/5">LHSS Info</button>
+            </nav>
+
+            <!-- Actions Header Right -->
+            <div class="flex items-center space-x-2">
+                <!-- Classroom Badge -->
+                <div class="hidden sm:flex items-center space-x-1.5 bg-black/60 border border-hcRed/40 px-3 py-1.5 rounded-xl font-mono text-xs">
+                    <i class="fa-solid fa-graduation-cap text-hcYellow"></i>
+                    <span class="text-gray-400">Classroom:</span>
+                    <strong class="text-white select-all">gq34ca36</strong>
+                </div>
+
+                <!-- Primary RSVP Button -->
+                <button onclick="openRsvpModal()" class="bg-gradient-to-r from-hcRed to-hcRedDark hover:opacity-90 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-lg transition transform hover:scale-105 flex items-center space-x-2">
+                    <i class="fa-solid fa-bolt text-hcYellow"></i>
+                    <span>RSVP Oct 3</span>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-gray-300 hover:text-white p-2 rounded-lg bg-white/5">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-hcDark/95 px-4 pt-3 pb-6 space-y-2 text-sm font-medium">
+            <div class="p-2.5 mb-2 bg-zinc-900 rounded-xl border border-white/10 flex items-center justify-between text-xs font-mono">
+                <span class="text-gray-400"><i class="fa-solid fa-graduation-cap text-hcYellow mr-1"></i> Google Classroom:</span>
+                <strong class="text-white select-all">gq34ca36</strong>
+            </div>
+            <button onclick="switchTab('home'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl text-white bg-white/10 font-bold">Home</button>
+            <button onclick="switchTab('perks'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/5">YSWS & Perks</button>
+            <button onclick="switchTab('projects'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/5">Projects</button>
+            <button onclick="switchTab('calendar'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/5">Calendar</button>
+            <button onclick="switchTab('info'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/5">LHSS Info</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- TAB 1: HOME PAGE -->
+        <div id="tab-home" class="tab-content space-y-12">
+            
+            <!-- HERO SECTION: Featuring Pitch Black Container with White Backlight Halo Edge -->
+            <section class="white-backlight-container my-4">
+                <div class="relative z-10 bg-black rounded-3xl p-6 sm:p-10 md:p-14 border border-white/20 shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
+                    
+                    <div class="space-y-6 max-w-2xl">
+                        <div class="inline-flex items-center space-x-2 bg-hcRed/15 border border-hcRed/40 text-hcRed text-xs font-mono font-bold px-3 py-1.5 rounded-full">
+                            <span class="w-2 h-2 rounded-full bg-hcRed animate-ping"></span>
+                            <span>Laurel Heights Secondary School • Waterloo, ON</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
+                            Build crazy projects. <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-hcRed via-red-400 to-hcYellow">
+                                Get free hardware.
+                            </span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
+                            Welcome to <strong>LHSS Hack Club</strong>! We are a community of student makers, coders, and creators at Laurel Heights. We meet bi-weekly to build real websites, games, and electronics with instant grants from Hack Club Global.
+                        </p>
+
+                        <!-- Quick Highlight Badges -->
+                        <div class="flex flex-wrap gap-2.5 text-xs sm:text-sm font-semibold pt-1">
+                            <span onclick="openRsvpModal()" class="bg-zinc-900 border border-hcYellow/40 text-hcYellow px-3.5 py-2 rounded-xl flex items-center space-x-2 cursor-pointer hover:bg-white/10 transition">
+                                <i class="fa-solid fa-mug-hot"></i><span>Free Boba Tea Kickoff (Oct 3)</span>
+                            </span>
+                            <span class="bg-zinc-900 border border-hcGreen/40 text-hcGreen px-3.5 py-2 rounded-xl flex items-center space-x-2">
+                                <i class="fa-solid fa-graduation-cap"></i><span>Code: gq34ca36</span>
+                            </span>
+                            <span class="bg-zinc-900 border border-hcCyan/40 text-hcCyan px-3.5 py-2 rounded-xl flex items-center space-x-2">
+                                <i class="fa-solid fa-location-dot"></i><span>Room 3411 • Lunch (10:50 - 11:50 AM)</span>
+                            </span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-3">
+                            <button onclick="openRsvpModal()" class="bg-hcRed hover:bg-hcRedDark text-white font-bold px-6 py-3.5 rounded-xl shadow-lg glow-red transition text-center flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>Join First Meeting (Oct 3)</span>
+                            </button>
+                            <button onclick="switchTab('calendar')" class="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3.5 rounded-xl border border-white/20 transition text-center flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-calendar-days text-hcRed"></i>
+                                <span>View Meeting Calendar</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Countdown Box Screen -->
+                    <div class="bg-zinc-950 border border-white/20 p-6 rounded-2xl w-full max-w-md shadow-2xl relative">
+                        <div class="flex items-center justify-between border-b border-white/15 pb-3 mb-4">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-3 h-3 rounded-full bg-green-400 animate-pulse"></span>
+                                <span class="text-xs font-mono font-bold uppercase tracking-wider text-hcRed">Next Meeting Kickoff</span>
+                            </div>
+                            <span class="text-xs bg-hcRed/20 text-hcRed font-bold px-2 py-0.5 rounded">Oct 3, 2026</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-lg font-extrabold text-white">🧋 Boba Drops Launch!</h3>
+                                <p class="text-xs text-gray-400 mt-1">Join us in Room 3411 during lunch for free boba, live demos, and free stickers!</p>
+                            </div>
+                            
+                            <!-- Countdown Timer -->
+                            <div class="grid grid-cols-4 gap-2 pt-1 text-center font-mono">
+                                <div class="bg-zinc-900 p-2.5 rounded-xl border border-white/10">
+                                    <span id="cd-days" class="block text-2xl font-extrabold text-white">00</span>
+                                    <span class="text-[10px] text-hcTextMuted uppercase">Days</span>
+                                </div>
+                                <div class="bg-zinc-900 p-2.5 rounded-xl border border-white/10">
+                                    <span id="cd-hours" class="block text-2xl font-extrabold text-white">00</span>
+                                    <span class="text-[10px] text-hcTextMuted uppercase">Hours</span>
+                                </div>
+                                <div class="bg-zinc-900 p-2.5 rounded-xl border border-white/10">
+                                    <span id="cd-mins" class="block text-2xl font-extrabold text-white">00</span>
+                                    <span class="text-[10px] text-hcTextMuted uppercase">Mins</span>
+                                </div>
+                                <div class="bg-zinc-900 p-2.5 rounded-xl border border-white/10">
+                                    <span id="cd-secs" class="block text-2xl font-extrabold text-hcRed">00</span>
+                                    <span class="text-[10px] text-hcTextMuted uppercase">Secs</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-3 flex items-center justify-between text-xs text-gray-300 border-t border-white/10">
+                                <span><i class="fa-regular fa-clock text-hcOrange mr-1"></i> Lunch (10:50 - 11:50 AM)</span>
+                                <span><i class="fa-solid fa-door-open text-hcGreen mr-1"></i> Room 3411</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- WHAT MAKES HACK CLUB DIFFERENT -->
+            <section class="space-y-6">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Why Join LHSS Hack Club?</h2>
+                    <p class="text-sm text-gray-400">Not another boring lecture club. You build real projects and get rewarded with real tech grants.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Feature 1 -->
+                    <div class="bg-hcCard border border-white/10 p-6 rounded-2xl hover:border-hcRed/50 transition duration-200 space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-hcRed/20 text-hcRed flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Learn by Building</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                            No prerequisites or prior coding experience needed! We learn together by shipping real web apps, Discord bots, and games.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-hcCard border border-white/10 p-6 rounded-2xl hover:border-hcYellow/50 transition duration-200 space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-hcYellow/20 text-hcYellow flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">YSWS Hardware Perks</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                            Through Hack Club's "You Ship, We Shell" (YSWS) program, submit your finished projects to get free custom domain names, PCB manufacturing, 3D printing grants, or Raspberry Pis!
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-hcCard border border-white/10 p-6 rounded-2xl hover:border-hcGreen/50 transition duration-200 space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-hcGreen/20 text-hcGreen flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Waterloo Tech Community</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                            Connect with fellow Laurel Heights students, join worldwide Hack Club Slack channels, collaborate on hackathons, and build your technical portfolio.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 2: YSWS & PERKS -->
+        <div id="tab-perks" class="tab-content hidden space-y-8">
+            <div class="bg-hcCard border border-white/10 rounded-2xl p-6 md:p-8 space-y-4">
+                <span class="bg-hcYellow/20 text-hcYellow text-xs font-bold px-3 py-1 rounded-full uppercase">You Ship, We Shell</span>
+                <h2 class="text-3xl font-extrabold text-white">Get Real Tech Funded by Hack Club Global</h2>
+                <p class="text-sm text-gray-300 max-w-3xl leading-relaxed">
+                    Whenever you build a project during our LHSS Hack Club meetings and publish it online, Hack Club sends you free hardware, domains, and developer tools directly to your doorstep.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Perk 1: Boba Drops -->
+                <div class="bg-hcCard border border-hcYellow/40 rounded-2xl p-6 space-y-3 relative overflow-hidden">
+                    <span class="absolute top-3 right-3 bg-hcYellow text-black font-black text-[10px] px-2 py-0.5 rounded">Oct 3 Kickoff</span>
+                    <i class="fa-solid fa-mug-hot text-3xl text-hcYellow"></i>
+                    <h3 class="text-xl font-bold text-white">Boba Drops Grant</h3>
+                    <p class="text-xs text-gray-400">Complete a quick HTML project at our Oct 3 meeting and receive a free $10 Boba Tea voucher!</p>
+                </div>
+
+                <!-- Perk 2: Free Domain -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-3">
+                    <i class="fa-solid fa-globe text-3xl text-hcCyan"></i>
+                    <h3 class="text-xl font-bold text-white">Free .com Domain</h3>
+                    <p class="text-xs text-gray-400">Ship any web app to receive a free 1-year custom domain name through Namecheap!</p>
+                </div>
+
+                <!-- Perk 3: Sprig Game Console -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-3">
+                    <i class="fa-solid fa-gamepad text-3xl text-hcGreen"></i>
+                    <h3 class="text-xl font-bold text-white">Sprig Handheld Console</h3>
+                    <p class="text-xs text-gray-400">Code a custom tile-based JS game in Sprig editor, and Hack Club mails you a custom retro handheld game console!</p>
+                </div>
+
+                <!-- Perk 4: PCB Board -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-3">
+                    <i class="fa-solid fa-microchip text-3xl text-hcPurple"></i>
+                    <h3 class="text-xl font-bold text-white">Custom PCB Manufacturing</h3>
+                    <p class="text-xs text-gray-400">Design your own circuit board schematic in KiCad, and get up to $100 in JLCPCB fabrication grants.</p>
+                </div>
+
+                <!-- Perk 5: Onboard Grant -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-3">
+                    <i class="fa-solid fa-cube text-3xl text-hcRed"></i>
+                    <h3 class="text-xl font-bold text-white">Onboard CAD & 3D Print</h3>
+                    <p class="text-xs text-gray-400">Design a 3D CAD model for physical electronics and receive a free micro-controller kit.</p>
+                </div>
+
+                <!-- Perk 6: Hackathon Stipend -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-3">
+                    <i class="fa-solid fa-wallet text-3xl text-hcOrange"></i>
+                    <h3 class="text-xl font-bold text-white">Hackathon Venue Gas & Food</h3>
+                    <p class="text-xs text-gray-400">Organize high school hackathons in Waterloo and receive up to $500+ in venue and food funding.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: PROJECTS -->
+        <div id="tab-projects" class="tab-content hidden space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-white">LHSS Student Projects</h2>
+                    <p class="text-sm text-gray-400">Check out what Laurel Heights students are building!</p>
+                </div>
+                <button onclick="openRsvpModal()" class="bg-hcRed text-white text-xs font-bold px-4 py-2.5 rounded-xl hover:bg-hcRedDark transition self-start sm:self-auto">
+                    Submit Your Project
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Example Project 1 -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-3">
+                    <div class="bg-black/50 h-36 rounded-xl border border-white/5 flex items-center justify-center text-4xl text-hcRed font-mono">
+                        &lt;/LHSS&gt;
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-hcRed/20 text-hcRed font-bold px-2 py-0.5 rounded">HTML / Tailwind</span>
+                        <span class="text-xs text-gray-500">Built by Alex (Gr 11)</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">LHSS Course Schedule Planner</h3>
+                    <p class="text-xs text-gray-400">A clean web app helping Laurel Heights students organize their daily semester timetable.</p>
+                </div>
+
+                <!-- Example Project 2 -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-3">
+                    <div class="bg-black/50 h-36 rounded-xl border border-white/5 flex items-center justify-center text-4xl text-hcGreen font-mono">
+                        🕹️
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-hcGreen/20 text-hcGreen font-bold px-2 py-0.5 rounded">Sprig JS Engine</span>
+                        <span class="text-xs text-gray-500">Built by Sarah (Gr 10)</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Laurel Dungeon Quest</h3>
+                    <p class="text-xs text-gray-400">A retro tile game created for Sprig YSWS to earn a physical handheld console.</p>
+                </div>
+
+                <!-- Example Project 3 -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-3">
+                    <div class="bg-black/50 h-36 rounded-xl border border-white/5 flex items-center justify-center text-4xl text-hcYellow font-mono">
+                        🧋
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-hcYellow/20 text-hcYellow font-bold px-2 py-0.5 rounded">Boba Grant Project</span>
+                        <span class="text-xs text-gray-500">Kickoff Template</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">My First Personal Portfolio</h3>
+                    <p class="text-xs text-gray-400">The inaugural web project built at our Oct 3 Boba Drops kickoff meeting!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: CALENDAR -->
+        <div id="tab-calendar" class="tab-content hidden space-y-8">
+            <div class="bg-hcCard border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-hcRed/20 text-hcRed font-bold text-xs px-2.5 py-1 rounded-md">2026 Schedule</span>
+                        <span class="text-xs text-hcTextMuted">Bi-Weekly Fridays @ Lunch</span>
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-white mt-1">LHSS Hack Club Calendar</h2>
+                    <p class="text-sm text-gray-300 mt-1">
+                        Meetings take place <strong>every 2 Fridays at Lunch</strong> starting <strong>October 3</strong> in <strong>Room 3411</strong> (10:50 AM - 11:50 AM).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Interactive Calendar Grid & Event List -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Event List -->
+                <div class="lg:col-span-2 space-y-4">
+                    
+                    <!-- Oct 3 Kickoff Event Card -->
+                    <div class="bg-gradient-to-r from-hcRed/20 via-hcCard to-hcCard border-2 border-hcRed rounded-2xl p-6 relative overflow-hidden space-y-4">
+                        <div class="absolute top-0 right-0 bg-hcRed text-white text-[10px] font-black uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+                            🎉 KICKOFF & BOBA DROPS
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-hcRed text-white rounded-xl p-3 text-center min-w-[70px] shadow-lg">
+                                    <span class="block text-xs font-bold uppercase">OCT</span>
+                                    <span class="block text-3xl font-black leading-none">03</span>
+                                    <span class="block text-[10px] opacity-80">FRIDAY</span>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <span class="inline-block bg-hcYellow/20 text-hcYellow text-xs font-bold px-2 py-0.5 rounded">First Official Meeting</span>
+                                    <h3 class="text-xl font-bold text-white">Boba Drops Kickoff & Intro to Hack Club</h3>
+                                    <p class="text-xs sm:text-sm text-gray-300">
+                                        Learn how Hack Club works, collect free stickers, grab free boba tea, and start your first web project during lunch!
+                                    </p>
+                                    <div class="flex flex-wrap items-center gap-3 text-xs text-gray-400 pt-2">
+                                        <span><i class="fa-regular fa-clock text-hcOrange"></i> Lunch (10:50 AM - 11:50 AM)</span>
+                                        <span><i class="fa-solid fa-location-dot text-hcRed"></i> Room 3411</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button onclick="openRsvpModal()" class="self-start sm:self-center bg-hcRed hover:bg-hcRedDark text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow transition whitespace-nowrap">
+                                RSVP Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Event 2: Oct 17 -->
+                    <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-1">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-zinc-900 border border-white/10 rounded-xl p-3 text-center min-w-[70px]">
+                                <span class="block text-xs font-bold uppercase text-hcCyan">OCT</span>
+                                <span class="block text-2xl font-black text-white leading-none">17</span>
+                                <span class="block text-[10px] text-gray-500">FRIDAY</span>
+                            </div>
+                            <div>
+                                <span class="text-xs bg-hcCyan/20 text-hcCyan font-bold px-2 py-0.5 rounded">YSWS Workshop</span>
+                                <h3 class="text-lg font-bold text-white">Web Dev & Domain Grant Setup</h3>
+                                <p class="text-xs text-gray-400 mt-1">Build your portfolio page and claim your free custom 1-year .com domain name!</p>
+                                <div class="flex items-center space-x-4 text-xs text-gray-500 pt-2">
+                                    <span><i class="fa-regular fa-clock"></i> Lunch (10:50 - 11:50 AM)</span>
+                                    <span><i class="fa-solid fa-door-open"></i> Room 3411</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3: Oct 31 -->
+                    <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-1">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-zinc-900 border border-white/10 rounded-xl p-3 text-center min-w-[70px]">
+                                <span class="block text-xs font-bold uppercase text-hcPurple">OCT</span>
+                                <span class="block text-2xl font-black text-white leading-none">31</span>
+                                <span class="block text-[10px] text-gray-500">FRIDAY</span>
+                            </div>
+                            <div>
+                                <span class="text-xs bg-hcPurple/20 text-hcPurple font-bold px-2 py-0.5 rounded">Special Event</span>
+                                <h3 class="text-lg font-bold text-white">Halloween Sprig Game Jam</h3>
+                                <p class="text-xs text-gray-400 mt-1">Create mini spook-themed JS games to win Sprig handheld retro hardware consoles.</p>
+                                <div class="flex items-center space-x-4 text-xs text-gray-500 pt-2">
+                                    <span><i class="fa-regular fa-clock"></i> Lunch (10:50 - 11:50 AM)</span>
+                                    <span><i class="fa-solid fa-door-open"></i> Room 3411</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 4: Nov 14 -->
+                    <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-1">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-zinc-900 border border-white/10 rounded-xl p-3 text-center min-w-[70px]">
+                                <span class="block text-xs font-bold uppercase text-hcGreen">NOV</span>
+                                <span class="block text-2xl font-black text-white leading-none">14</span>
+                                <span class="block text-[10px] text-gray-500">FRIDAY</span>
+                            </div>
+                            <div>
+                                <span class="text-xs bg-hcGreen/20 text-hcGreen font-bold px-2 py-0.5 rounded">Hardware Hack</span>
+                                <h3 class="text-lg font-bold text-white">Intro to Hardware & Microcontrollers</h3>
+                                <p class="text-xs text-gray-400 mt-1">Hands-on soldering, breadboards, and electronic CAD schematics.</p>
+                                <div class="flex items-center space-x-4 text-xs text-gray-500 pt-2">
+                                    <span><i class="fa-regular fa-clock"></i> Lunch (10:50 - 11:50 AM)</span>
+                                    <span><i class="fa-solid fa-door-open"></i> Room 3411</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side Mini Calendar Grid Widget -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-6 h-fit space-y-4">
+                    <h3 class="text-lg font-bold text-white border-b border-white/10 pb-3">October 2026</h3>
+                    
+                    <div class="grid grid-cols-7 gap-1 text-center text-xs font-mono">
+                        <span class="text-gray-500 font-bold">S</span>
+                        <span class="text-gray-500 font-bold">M</span>
+                        <span class="text-gray-500 font-bold">T</span>
+                        <span class="text-gray-500 font-bold">W</span>
+                        <span class="text-gray-500 font-bold">T</span>
+                        <span class="text-gray-500 font-bold">F</span>
+                        <span class="text-gray-500 font-bold">S</span>
+
+                        <span class="p-1.5 text-gray-600">27</span>
+                        <span class="p-1.5 text-gray-600">28</span>
+                        <span class="p-1.5 text-gray-600">29</span>
+                        <span class="p-1.5 text-gray-600">30</span>
+                        <span class="p-1.5 text-gray-300">1</span>
+                        <span class="p-1.5 text-gray-300">2</span>
+                        <span class="p-1.5 bg-hcRed text-white font-black rounded cursor-pointer glow-red" title="Oct 3: Boba Drops Kickoff">3</span>
+                        <span class="p-1.5 text-gray-300">4</span>
+                        <span class="p-1.5 text-gray-300">5</span>
+                        <span class="p-1.5 text-gray-300">6</span>
+                        <span class="p-1.5 text-gray-300">7</span>
+                        <span class="p-1.5 text-gray-300">8</span>
+                        <span class="p-1.5 text-gray-300">9</span>
+                        <span class="p-1.5 text-gray-300">10</span>
+                        <span class="p-1.5 text-gray-300">11</span>
+                        <span class="p-1.5 text-gray-300">12</span>
+                        <span class="p-1.5 text-gray-300">13</span>
+                        <span class="p-1.5 text-gray-300">14</span>
+                        <span class="p-1.5 text-gray-300">15</span>
+                        <span class="p-1.5 text-gray-300">16</span>
+                        <span class="p-1.5 bg-hcCyan text-black font-bold rounded cursor-pointer" title="Oct 17: Web Dev Workshop">17</span>
+                        <span class="p-1.5 text-gray-300">18</span>
+                        <span class="p-1.5 text-gray-300">19</span>
+                        <span class="p-1.5 text-gray-300">20</span>
+                        <span class="p-1.5 text-gray-300">21</span>
+                        <span class="p-1.5 text-gray-300">22</span>
+                        <span class="p-1.5 text-gray-300">23</span>
+                        <span class="p-1.5 text-gray-300">24</span>
+                        <span class="p-1.5 text-gray-300">25</span>
+                        <span class="p-1.5 text-gray-300">26</span>
+                        <span class="p-1.5 text-gray-300">27</span>
+                        <span class="p-1.5 text-gray-300">28</span>
+                        <span class="p-1.5 text-gray-300">29</span>
+                        <span class="p-1.5 text-gray-300">30</span>
+                        <span class="p-1.5 bg-hcPurple text-white font-bold rounded cursor-pointer" title="Oct 31: Halloween Jam">31</span>
+                    </div>
+
+                    <div class="pt-3 border-t border-white/10 text-xs space-y-1.5 text-gray-400">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2.5 h-2.5 rounded bg-hcRed"></span>
+                            <span>Oct 3: Boba Drops Kickoff Meeting</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2.5 h-2.5 rounded bg-hcCyan"></span>
+                            <span>Oct 17: Web Dev & Domain Grant</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2.5 h-2.5 rounded bg-hcPurple"></span>
+                            <span>Oct 31: Halloween Game Jam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: LHSS INFO -->
+        <div id="tab-info" class="tab-content hidden space-y-8">
+            <div class="bg-hcCard border border-white/10 rounded-2xl p-6 md:p-8 space-y-4">
+                <span class="bg-hcCyan/20 text-hcCyan text-xs font-bold px-3 py-1 rounded-full uppercase">School Information</span>
+                <h2 class="text-3xl font-extrabold text-white">Laurel Heights Secondary School</h2>
+                <p class="text-sm text-gray-300 max-w-2xl leading-relaxed">
+                    Laurel Heights Secondary School (WRDSB) is located in Waterloo, Ontario. Hack Club operates as an official student tech club under computer science room 3411.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Location & Contact -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white border-b border-white/10 pb-3">Club Meeting Details</h3>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-map-pin text-hcRed mt-1"></i>
+                            <div>
+                                <p class="text-white font-semibold">Address</p>
+                                <p class="text-xs text-gray-400">650 Laurelwood Dr, Waterloo, ON N2V 2V1</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-door-open text-hcYellow mt-1"></i>
+                            <div>
+                                <p class="text-white font-semibold">Meeting Room</p>
+                                <p class="text-xs text-gray-400">Room 3411 (Computer Science Lab)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-graduation-cap text-hcCyan mt-1"></i>
+                            <div>
+                                <p class="text-white font-semibold">Google Classroom Code</p>
+                                <p class="text-xs font-mono font-bold text-hcYellow select-all">gq34ca36</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-clock text-hcGreen mt-1"></i>
+                            <div>
+                                <p class="text-white font-semibold">Frequency & Time</p>
+                                <p class="text-xs text-gray-400">Every 2 Fridays during Lunch (10:50 AM - 11:50 AM)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Schedule Table -->
+                <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white border-b border-white/10 pb-3">LHSS Daily Schedule</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead>
+                                <tr class="text-gray-400 border-b border-white/10">
+                                    <th class="pb-2">Period</th>
+                                    <th class="pb-2">Time</th>
+                                    <th class="pb-2">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5">
+                                <tr>
+                                    <td class="py-2 text-white font-semibold">Period A / B</td>
+                                    <td class="py-2 text-gray-300">8:15 AM - 9:30 AM</td>
+                                    <td class="py-2 text-gray-400">First Morning Block</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 text-white font-semibold">Period B / A</td>
+                                    <td class="py-2 text-gray-300">9:35 AM - 10:50 AM</td>
+                                    <td class="py-2 text-gray-400">Second Morning Block</td>
+                                </tr>
+                                <tr class="bg-hcRed/20 border-t border-hcRed/40">
+                                    <td class="py-2.5 font-bold text-hcRed">Lunch (Hack Club)</td>
+                                    <td class="py-2.5 font-bold text-white">10:50 AM - 11:50 AM</td>
+                                    <td class="py-2.5 font-bold text-hcYellow">Room 3411 (Every 2 Fri)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 text-white font-semibold">Period C / D</td>
+                                    <td class="py-2 text-gray-300">11:55 AM - 1:10 PM</td>
+                                    <td class="py-2 text-gray-400">Early Afternoon</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 text-white font-semibold">Period D / C</td>
+                                    <td class="py-2 text-gray-300">1:15 PM - 2:30 PM</td>
+                                    <td class="py-2 text-gray-400">Final Class</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- RSVP MODAL WITH EMBEDDED GOOGLE FORM -->
+    <div id="rsvp-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-hcCard border border-hcRed/50 rounded-3xl p-6 sm:p-8 max-w-lg w-full space-y-4 shadow-2xl relative">
+            
+            <button onclick="closeRsvpModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg p-2 focus:outline-none z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="space-y-1">
+                <span class="bg-hcRed/20 text-hcRed font-bold text-[11px] px-2.5 py-1 rounded-md uppercase">LHSS Hack Club RSVP</span>
+                <h3 class="text-2xl font-extrabold text-white">Join Oct 3 Boba Kickoff</h3>
+                <p class="text-xs text-gray-300">
+                    Reserve your spot for our lunch meeting in <strong>Room 3411</strong> (10:50 AM - 11:50 AM) and claim your free Boba voucher!
+                </p>
+                <div class="bg-zinc-900 border border-white/10 rounded-xl p-2 flex items-center justify-between text-xs font-mono mt-1">
+                    <span class="text-gray-400">Classroom Code:</span>
+                    <strong class="text-hcYellow select-all">gq34ca36</strong>
+                </div>
+            </div>
+
+            <!-- Embedded Google Form -->
+            <div class="w-full bg-hcDark rounded-2xl overflow-hidden border border-white/10">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScasSJDN6wrZGMUrW66VWYN4h4W7EwB9Pn-wc-Bocu4bx7vRQ/viewform?embedded=true" 
+                    width="100%" 
+                    height="460" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    class="w-full rounded-2xl">
+                    Loading Google Form...
+                </iframe>
+            </div>
+
+            <div class="flex items-center justify-between pt-1 text-xs">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScasSJDN6wrZGMUrW66VWYN4h4W7EwB9Pn-wc-Bocu4bx7vRQ/viewform?usp=dialog" 
+                   target="_blank" 
+                   class="text-hcCyan hover:underline flex items-center space-x-1">
+                    <span>Open form in new tab</span>
+                    <i class="fa-solid fa-external-link text-[10px]"></i>
+                </a>
+                <button onclick="closeRsvpModal()" class="text-gray-400 hover:text-white font-semibold">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-hcDark py-8 mt-12 text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="bg-hcRed text-white font-bold px-2 py-0.5 rounded text-xs">LHSS Hack Club</div>
+                <span>Laurel Heights Secondary School • Waterloo, ON</span>
+            </div>
+            
+            <div class="flex items-center space-x-6 text-gray-400">
+                <span>Room 3411</span>
+                <span>Code: <strong class="text-white select-all">gq34ca36</strong></span>
+                <a href="https://hackclub.com" target="_blank" class="hover:text-hcRed transition">Hack Club Global</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT CONTROLLERS -->
+    <script>
+        // Tab Switcher Controller
+        function switchTab(tabId) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.add('hidden'));
+
+            // Show target tab
+            const target = document.getElementById('tab-' + tabId);
+            if (target) {
+                target.classList.remove('hidden');
+            }
+
+            // Update Nav styles
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('text-white', 'bg-white/10', 'font-bold');
+                btn.classList.add('text-gray-300');
+            });
+
+            const activeBtn = document.getElementById('nav-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.add('text-white', 'bg-white/10', 'font-bold');
+                activeBtn.classList.remove('text-gray-300');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Modal Controllers
+        function openRsvpModal() {
+            document.getElementById('rsvp-modal').classList.remove('hidden');
+        }
+
+        function closeRsvpModal() {
+            document.getElementById('rsvp-modal').classList.add('hidden');
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeRsvpModal();
+        });
+
+        // Live Countdown Timer to Friday, Oct 3, 2026 @ 10:50 AM EDT
+        function initCountdown() {
+            const targetDate = new Date("2026-10-03T10:50:00").getTime();
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+
+                if (difference <= 0) {
+                    document.getElementById('cd-days').textContent = '00';
+                    document.getElementById('cd-hours').textContent = '00';
+                    document.getElementById('cd-mins').textContent = '00';
+                    document.getElementById('cd-secs').textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cd-mins').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('cd-secs').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        // Start countdown on window load
+        window.onload = function() {
+            initCountdown();
+        };
+    </script>
+</body>
+</html>
