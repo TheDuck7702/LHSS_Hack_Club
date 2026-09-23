@@ -106,7 +106,7 @@
     <header class="sticky top-0 z-40 backdrop-blur-md bg-hcDark/90 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo & Title Space (Pushed right to clear flag) -->
+            <!-- Logo & Title Space -->
             <div class="flex items-center space-x-3 ml-28 sm:ml-36 md:ml-40">
                 <div class="bg-hcRed text-white font-black px-2.5 py-1 rounded-lg text-lg tracking-tight shadow-md flex items-center space-x-1">
                     <span>LHSS</span>
@@ -118,7 +118,7 @@
                 </div>
             </div>
 
-            <!-- Main Navigation Links (Boba Button Removed from Nav) -->
+            <!-- Main Navigation Links -->
             <nav class="hidden lg:flex items-center space-x-1 font-medium text-sm">
                 <button onclick="switchTab('home')" id="nav-home" class="nav-btn px-4 py-2 rounded-xl transition text-white bg-white/10 font-bold">Home</button>
                 <button onclick="switchTab('perks')" id="nav-perks" class="nav-btn px-4 py-2 rounded-xl transition text-gray-300 hover:text-white hover:bg-white/5">YSWS & Perks</button>
@@ -169,7 +169,7 @@
         <!-- TAB 1: HOME PAGE -->
         <div id="tab-home" class="tab-content space-y-12">
             
-            <!-- HERO SECTION: Featuring Pitch Black Container with White Backlight Halo Edge -->
+            <!-- HERO SECTION -->
             <section class="white-backlight-container my-4">
                 <div class="relative z-10 bg-black rounded-3xl p-6 sm:p-10 md:p-14 border border-white/20 shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
                     
@@ -187,19 +187,19 @@
                         </h1>
 
                         <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
-                            Welcome to <strong>LHSS Hack Club</strong>! We are a community of student makers, coders, and creators at Laurel Heights. We meet bi-weekly to build real websites, games, and electronics with instant grants from Hack Club Global.
+                            Welcome to <strong>LHSS Hack Club</strong>! We are a community of student makers, coders, and creators at Laurel Heights. We meet <strong>every Friday at Lunch</strong> to build real websites, games, and electronics with instant grants from Hack Club Global.
                         </p>
 
                         <!-- Quick Highlight Badges -->
                         <div class="flex flex-wrap gap-2.5 text-xs sm:text-sm font-semibold pt-1">
                             <span onclick="openRsvpModal()" class="bg-zinc-900 border border-hcYellow/40 text-hcYellow px-3.5 py-2 rounded-xl flex items-center space-x-2 cursor-pointer hover:bg-white/10 transition">
-                                <i class="fa-solid fa-mug-hot"></i><span>Free Boba Tea Kickoff (Oct 2)</span>
+                                <i class="fa-solid fa-mug-hot"></i><span>Free Boba Kickoffs (Oct 2 & Oct 9)</span>
                             </span>
                             <span class="bg-zinc-900 border border-hcGreen/40 text-hcGreen px-3.5 py-2 rounded-xl flex items-center space-x-2">
                                 <i class="fa-solid fa-graduation-cap"></i><span>Code: gq34ca36</span>
                             </span>
                             <span class="bg-zinc-900 border border-hcCyan/40 text-hcCyan px-3.5 py-2 rounded-xl flex items-center space-x-2">
-                                <i class="fa-solid fa-location-dot"></i><span>Room 3411 • Lunch (10:50 - 11:50 AM)</span>
+                                <i class="fa-solid fa-location-dot"></i><span>Room 3411 • Every Fri Lunch (10:50 - 11:50 AM)</span>
                             </span>
                         </div>
 
@@ -207,7 +207,7 @@
                         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-3">
                             <button onclick="openRsvpModal()" class="bg-hcRed hover:bg-hcRedDark text-white font-bold px-6 py-3.5 rounded-xl shadow-lg glow-red transition text-center flex items-center justify-center space-x-2">
                                 <i class="fa-solid fa-bolt"></i>
-                                <span>Join First Meeting (Oct 2)</span>
+                                <span>RSVP for Boba Kickoff (Oct 2)</span>
                             </button>
                             <button onclick="switchTab('calendar')" class="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3.5 rounded-xl border border-white/20 transition text-center flex items-center justify-center space-x-2">
                                 <i class="fa-solid fa-calendar-days text-hcRed"></i>
@@ -228,8 +228,8 @@
 
                         <div class="space-y-4">
                             <div>
-                                <h3 class="text-lg font-extrabold text-white">🧋 Boba Drops Launch!</h3>
-                                <p class="text-xs text-gray-400 mt-1">Join us in Room 3411 during lunch for free boba, live demos, and free stickers!</p>
+                                <h3 class="text-lg font-extrabold text-white">🧋 Boba Drops Launch #1!</h3>
+                                <p class="text-xs text-gray-400 mt-1">Join us in Room 3411 during lunch for free boba, beginner coding workshops, and stickers! (Follow-up session Oct 9)</p>
                             </div>
                             
                             <!-- Countdown Timer -->
@@ -266,11 +266,10 @@
             <section class="space-y-6">
                 <div class="text-center max-w-2xl mx-auto space-y-2">
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Why Join LHSS Hack Club?</h2>
-                    <p class="text-sm text-gray-400">Not another boring lecture club. You build real projects and get rewarded with real tech grants.</p>
+                    <p class="text-sm text-gray-400">Every Friday at Lunch in Room 3411. Build real projects and get rewarded with real tech grants.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Feature 1 -->
                     <div class="bg-hcCard border border-white/10 p-6 rounded-2xl hover:border-hcRed/50 transition duration-200 space-y-3">
                         <div class="w-12 h-12 rounded-xl bg-hcRed/20 text-hcRed flex items-center justify-center text-xl font-bold">
                             <i class="fa-solid fa-code"></i>
@@ -281,7 +280,6 @@
                         </p>
                     </div>
 
-                    <!-- Feature 2 -->
                     <div class="bg-hcCard border border-white/10 p-6 rounded-2xl hover:border-hcYellow/50 transition duration-200 space-y-3">
                         <div class="w-12 h-12 rounded-xl bg-hcYellow/20 text-hcYellow flex items-center justify-center text-xl font-bold">
                             <i class="fa-solid fa-gift"></i>
@@ -292,7 +290,6 @@
                         </p>
                     </div>
 
-                    <!-- Feature 3 -->
                     <div class="bg-hcCard border border-white/10 p-6 rounded-2xl hover:border-hcGreen/50 transition duration-200 space-y-3">
                         <div class="w-12 h-12 rounded-xl bg-hcGreen/20 text-hcGreen flex items-center justify-center text-xl font-bold">
                             <i class="fa-solid fa-users"></i>
@@ -317,46 +314,40 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Perk 1: Boba Drops -->
                 <div class="bg-hcCard border border-hcYellow/40 rounded-2xl p-6 space-y-3 relative overflow-hidden">
-                    <span class="absolute top-3 right-3 bg-hcYellow text-black font-black text-[10px] px-2 py-0.5 rounded">Oct 2 Kickoff</span>
+                    <span class="absolute top-3 right-3 bg-hcYellow text-black font-black text-[10px] px-2 py-0.5 rounded">Oct 2 & Oct 9</span>
                     <i class="fa-solid fa-mug-hot text-3xl text-hcYellow"></i>
                     <h3 class="text-xl font-bold text-white">Boba Drops Grant</h3>
-                    <p class="text-xs text-gray-400">Complete a quick HTML project at our Oct 2 meeting and receive a free $10 Boba Tea voucher!</p>
+                    <p class="text-xs text-gray-400">Complete a quick beginner workshop at our October 2nd or October 9th meetings and receive a free $10 Boba Tea voucher!</p>
                 </div>
 
-                <!-- Perk 2: fusering -->
                 <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-3">
                     <i class="fa-solid fa-globe text-3xl text-hcCyan"></i>
-                    <h3 class="text-xl font-bold text-white">FuseRing</h3>
-                    <p class="text-xs text-gray-400">Ship any CAD design for a keychain, and receive a free 3d printed part, with free stickers!</p>
+                    <h3 class="text-xl font-bold text-white">Free .com Domain</h3>
+                    <p class="text-xs text-gray-400">Ship any web app to receive a free 1-year custom domain name through Namecheap!</p>
                 </div>
 
-                <!-- Perk 3: Sprig Game Console -->
                 <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-3">
                     <i class="fa-solid fa-gamepad text-3xl text-hcGreen"></i>
                     <h3 class="text-xl font-bold text-white">Sprig Handheld Console</h3>
                     <p class="text-xs text-gray-400">Code a custom tile-based JS game in Sprig editor, and Hack Club mails you a custom retro handheld game console!</p>
                 </div>
 
-                <!-- Perk 4: PCB Board -->
                 <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-3">
                     <i class="fa-solid fa-microchip text-3xl text-hcPurple"></i>
                     <h3 class="text-xl font-bold text-white">Custom PCB Manufacturing</h3>
                     <p class="text-xs text-gray-400">Design your own circuit board schematic in KiCad, and get up to $100 in JLCPCB fabrication grants.</p>
                 </div>
 
-                <!-- Perk 5: Onboard Grant -->
                 <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-3">
                     <i class="fa-solid fa-cube text-3xl text-hcRed"></i>
                     <h3 class="text-xl font-bold text-white">Onboard CAD & 3D Print</h3>
                     <p class="text-xs text-gray-400">Design a 3D CAD model for physical electronics and receive a free micro-controller kit.</p>
                 </div>
 
-                <!-- Perk 6: Hackathon Stipend -->
                 <div class="bg-hcCard border border-white/10 rounded-2xl p-6 space-y-3">
                     <i class="fa-solid fa-wallet text-3xl text-hcOrange"></i>
-                    <h3 class="text-xl font-bold text-white">Hackathon Venue Gas & Food</h3>
+                    <h3 class="text-xl font-bold text-white">Hackathon Stipend</h3>
                     <p class="text-xs text-gray-400">Organize high school hackathons in Waterloo and receive up to $500+ in venue and food funding.</p>
                 </div>
             </div>
@@ -375,7 +366,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Example Project 1 -->
                 <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-3">
                     <div class="bg-black/50 h-36 rounded-xl border border-white/5 flex items-center justify-center text-4xl text-hcRed font-mono">
                         &lt;/LHSS&gt;
@@ -388,7 +378,6 @@
                     <p class="text-xs text-gray-400">A clean web app helping Laurel Heights students organize their daily semester timetable.</p>
                 </div>
 
-                <!-- Example Project 2 -->
                 <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-3">
                     <div class="bg-black/50 h-36 rounded-xl border border-white/5 flex items-center justify-center text-4xl text-hcGreen font-mono">
                         🕹️
@@ -401,7 +390,6 @@
                     <p class="text-xs text-gray-400">A retro tile game created for Sprig YSWS to earn a physical handheld console.</p>
                 </div>
 
-                <!-- Example Project 3 -->
                 <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-3">
                     <div class="bg-black/50 h-36 rounded-xl border border-white/5 flex items-center justify-center text-4xl text-hcYellow font-mono">
                         🧋
@@ -422,39 +410,38 @@
                 <div>
                     <div class="flex items-center space-x-2">
                         <span class="bg-hcRed/20 text-hcRed font-bold text-xs px-2.5 py-1 rounded-md">2026 Schedule</span>
-                        <span class="text-xs text-hcTextMuted">Bi-Weekly Fridays @ Lunch</span>
+                        <span class="text-xs text-hcTextMuted">Every Friday @ Lunch</span>
                     </div>
                     <h2 class="text-3xl font-extrabold text-white mt-1">LHSS Hack Club Calendar</h2>
                     <p class="text-sm text-gray-300 mt-1">
-                        Meetings take place <strong>every 2 Fridays at Lunch</strong> starting <strong>October 3</strong> in <strong>Room 3411</strong> (10:50 AM - 11:50 AM).
+                        Meetings take place <strong>every Friday at Lunch</strong> starting <strong>October 2nd</strong> in <strong>Room 3411</strong> (10:50 AM - 11:50 AM).
                     </p>
                 </div>
             </div>
 
-            <!-- Interactive Calendar Grid & Event List -->
+            <!-- Event List -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Event List -->
                 <div class="lg:col-span-2 space-y-4">
                     
-                    <!-- Oct 2 Kickoff Event Card -->
+                    <!-- Oct 2 Kickoff #1 -->
                     <div class="bg-gradient-to-r from-hcRed/20 via-hcCard to-hcCard border-2 border-hcRed rounded-2xl p-6 relative overflow-hidden space-y-4">
                         <div class="absolute top-0 right-0 bg-hcRed text-white text-[10px] font-black uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-                            🎉 KICKOFF & BOBA DROPS
+                            🎉 KICKOFF & BOBA DROPS #1
                         </div>
 
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                             <div class="flex items-start space-x-4">
                                 <div class="bg-hcRed text-white rounded-xl p-3 text-center min-w-[70px] shadow-lg">
                                     <span class="block text-xs font-bold uppercase">OCT</span>
-                                    <span class="block text-3xl font-black leading-none">03</span>
+                                    <span class="block text-3xl font-black leading-none">02</span>
                                     <span class="block text-[10px] opacity-80">FRIDAY</span>
                                 </div>
 
                                 <div class="space-y-1">
                                     <span class="inline-block bg-hcYellow/20 text-hcYellow text-xs font-bold px-2 py-0.5 rounded">First Official Meeting</span>
-                                    <h3 class="text-xl font-bold text-white">Boba Drops Kickoff & Intro to Hack Club</h3>
+                                    <h3 class="text-xl font-bold text-white">Boba Drops Kickoff #1</h3>
                                     <p class="text-xs sm:text-sm text-gray-300">
-                                        Learn how Hack Club works, collect free stickers, grab free boba tea, and start your first web project during lunch!
+                                        Learn how Hack Club works, collect stickers, start your first website, and claim your free Boba Tea voucher!
                                     </p>
                                     <div class="flex flex-wrap items-center gap-3 text-xs text-gray-400 pt-2">
                                         <span><i class="fa-regular fa-clock text-hcOrange"></i> Lunch (10:50 AM - 11:50 AM)</span>
@@ -469,17 +456,37 @@
                         </div>
                     </div>
 
-                    <!-- Event 2: Oct 17 -->
+                    <!-- Oct 9 Kickoff #2 -->
+                    <div class="bg-hcCard border border-hcYellow/40 rounded-2xl p-5 space-y-1">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-zinc-900 border border-white/10 rounded-xl p-3 text-center min-w-[70px]">
+                                <span class="block text-xs font-bold uppercase text-hcYellow">OCT</span>
+                                <span class="block text-2xl font-black text-white leading-none">09</span>
+                                <span class="block text-[10px] text-gray-500">FRIDAY</span>
+                            </div>
+                            <div>
+                                <span class="text-xs bg-hcYellow/20 text-hcYellow font-bold px-2 py-0.5 rounded">Boba Session #2</span>
+                                <h3 class="text-lg font-bold text-white">Boba Drops Workshop #2 & Project Polish</h3>
+                                <p class="text-xs text-gray-400 mt-1">Second boba workshop session! Finish your project, submit for Boba vouchers, and set up GitHub.</p>
+                                <div class="flex items-center space-x-4 text-xs text-gray-500 pt-2">
+                                    <span><i class="fa-regular fa-clock"></i> Lunch (10:50 - 11:50 AM)</span>
+                                    <span><i class="fa-solid fa-door-open"></i> Room 3411</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Oct 16 Event -->
                     <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-1">
                         <div class="flex items-start space-x-4">
                             <div class="bg-zinc-900 border border-white/10 rounded-xl p-3 text-center min-w-[70px]">
                                 <span class="block text-xs font-bold uppercase text-hcCyan">OCT</span>
-                                <span class="block text-2xl font-black text-white leading-none">17</span>
+                                <span class="block text-2xl font-black text-white leading-none">16</span>
                                 <span class="block text-[10px] text-gray-500">FRIDAY</span>
                             </div>
                             <div>
                                 <span class="text-xs bg-hcCyan/20 text-hcCyan font-bold px-2 py-0.5 rounded">YSWS Workshop</span>
-                                <h3 class="text-lg font-bold text-white">Web Dev & Domain Grant Setup</h3>
+                                <h3 class="text-lg font-bold text-white">Web Dev & Free Domain Grant</h3>
                                 <p class="text-xs text-gray-400 mt-1">Build your portfolio page and claim your free custom 1-year .com domain name!</p>
                                 <div class="flex items-center space-x-4 text-xs text-gray-500 pt-2">
                                     <span><i class="fa-regular fa-clock"></i> Lunch (10:50 - 11:50 AM)</span>
@@ -489,18 +496,18 @@
                         </div>
                     </div>
 
-                    <!-- Event 3: Oct 21 -->
+                    <!-- Oct 23 Event -->
                     <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-1">
                         <div class="flex items-start space-x-4">
                             <div class="bg-zinc-900 border border-white/10 rounded-xl p-3 text-center min-w-[70px]">
-                                <span class="block text-xs font-bold uppercase text-hcPurple">OCT</span>
-                                <span class="block text-2xl font-black text-white leading-none">31</span>
+                                <span class="block text-xs font-bold uppercase text-hcGreen">OCT</span>
+                                <span class="block text-2xl font-black text-white leading-none">23</span>
                                 <span class="block text-[10px] text-gray-500">FRIDAY</span>
                             </div>
                             <div>
-                                <span class="text-xs bg-hcPurple/20 text-hcPurple font-bold px-2 py-0.5 rounded">Special Event</span>
-                                <h3 class="text-lg font-bold text-white">Halloween Sprig Game Jam</h3>
-                                <p class="text-xs text-gray-400 mt-1">Create mini spook-themed JS games to win Sprig handheld retro hardware consoles.</p>
+                                <span class="text-xs bg-hcGreen/20 text-hcGreen font-bold px-2 py-0.5 rounded">Sprig Dev</span>
+                                <h3 class="text-lg font-bold text-white">Game Development in Sprig</h3>
+                                <p class="text-xs text-gray-400 mt-1">Start making custom 2D retro tile games to win a physical Sprig console.</p>
                                 <div class="flex items-center space-x-4 text-xs text-gray-500 pt-2">
                                     <span><i class="fa-regular fa-clock"></i> Lunch (10:50 - 11:50 AM)</span>
                                     <span><i class="fa-solid fa-door-open"></i> Room 3411</span>
@@ -509,18 +516,18 @@
                         </div>
                     </div>
 
-                    <!-- Event 4: Nov 14 -->
+                    <!-- Oct 30 Event -->
                     <div class="bg-hcCard border border-white/10 rounded-2xl p-5 space-y-1">
                         <div class="flex items-start space-x-4">
                             <div class="bg-zinc-900 border border-white/10 rounded-xl p-3 text-center min-w-[70px]">
-                                <span class="block text-xs font-bold uppercase text-hcGreen">NOV</span>
-                                <span class="block text-2xl font-black text-white leading-none">14</span>
+                                <span class="block text-xs font-bold uppercase text-hcPurple">OCT</span>
+                                <span class="block text-2xl font-black text-white leading-none">30</span>
                                 <span class="block text-[10px] text-gray-500">FRIDAY</span>
                             </div>
                             <div>
-                                <span class="text-xs bg-hcGreen/20 text-hcGreen font-bold px-2 py-0.5 rounded">Hardware Hack</span>
-                                <h3 class="text-lg font-bold text-white">Intro to Hardware & Microcontrollers</h3>
-                                <p class="text-xs text-gray-400 mt-1">Hands-on soldering, breadboards, and electronic CAD schematics.</p>
+                                <span class="text-xs bg-hcPurple/20 text-hcPurple font-bold px-2 py-0.5 rounded">Special Event</span>
+                                <h3 class="text-lg font-bold text-white">Halloween Game Jam & Demos</h3>
+                                <p class="text-xs text-gray-400 mt-1">Showcase mini games, eat snacks, and celebrate Halloween with hardware grants!</p>
                                 <div class="flex items-center space-x-4 text-xs text-gray-500 pt-2">
                                     <span><i class="fa-regular fa-clock"></i> Lunch (10:50 - 11:50 AM)</span>
                                     <span><i class="fa-solid fa-door-open"></i> Room 3411</span>
@@ -549,50 +556,54 @@
                         <span class="p-1.5 text-gray-600">29</span>
                         <span class="p-1.5 text-gray-600">30</span>
                         <span class="p-1.5 text-gray-300">1</span>
-                        <span class="p-1.5 text-gray-300">2</span>
-                        <span class="p-1.5 bg-hcRed text-white font-black rounded cursor-pointer glow-red" title="Oct 2: Boba Drops Kickoff">3</span>
+                        <span class="p-1.5 bg-hcRed text-white font-black rounded cursor-pointer glow-red" title="Oct 2: Boba Kickoff #1">2</span>
+                        <span class="p-1.5 text-gray-300">3</span>
                         <span class="p-1.5 text-gray-300">4</span>
                         <span class="p-1.5 text-gray-300">5</span>
                         <span class="p-1.5 text-gray-300">6</span>
                         <span class="p-1.5 text-gray-300">7</span>
                         <span class="p-1.5 text-gray-300">8</span>
-                        <span class="p-1.5 text-gray-300">9</span>
+                        <span class="p-1.5 bg-hcYellow text-black font-bold rounded cursor-pointer" title="Oct 9: Boba Kickoff #2">9</span>
                         <span class="p-1.5 text-gray-300">10</span>
                         <span class="p-1.5 text-gray-300">11</span>
                         <span class="p-1.5 text-gray-300">12</span>
                         <span class="p-1.5 text-gray-300">13</span>
                         <span class="p-1.5 text-gray-300">14</span>
                         <span class="p-1.5 text-gray-300">15</span>
-                        <span class="p-1.5 text-gray-300">16</span>
-                        <span class="p-1.5 bg-hcCyan text-black font-bold rounded cursor-pointer" title="Oct 17: Web Dev Workshop">17</span>
+                        <span class="p-1.5 bg-hcCyan text-black font-bold rounded cursor-pointer" title="Oct 16: Web Dev & Domains">16</span>
+                        <span class="p-1.5 text-gray-300">17</span>
                         <span class="p-1.5 text-gray-300">18</span>
                         <span class="p-1.5 text-gray-300">19</span>
                         <span class="p-1.5 text-gray-300">20</span>
                         <span class="p-1.5 text-gray-300">21</span>
                         <span class="p-1.5 text-gray-300">22</span>
-                        <span class="p-1.5 text-gray-300">23</span>
+                        <span class="p-1.5 bg-hcGreen text-black font-bold rounded cursor-pointer" title="Oct 23: Sprig Dev">23</span>
                         <span class="p-1.5 text-gray-300">24</span>
                         <span class="p-1.5 text-gray-300">25</span>
                         <span class="p-1.5 text-gray-300">26</span>
                         <span class="p-1.5 text-gray-300">27</span>
                         <span class="p-1.5 text-gray-300">28</span>
                         <span class="p-1.5 text-gray-300">29</span>
-                        <span class="p-1.5 text-gray-300">30</span>
-                        <span class="p-1.5 bg-hcPurple text-white font-bold rounded cursor-pointer" title="Oct 21: Halloween Jam">31</span>
+                        <span class="p-1.5 bg-hcPurple text-white font-bold rounded cursor-pointer" title="Oct 30: Halloween Jam">30</span>
+                        <span class="p-1.5 text-gray-300">31</span>
                     </div>
 
                     <div class="pt-3 border-t border-white/10 text-xs space-y-1.5 text-gray-400">
                         <div class="flex items-center space-x-2">
                             <span class="w-2.5 h-2.5 rounded bg-hcRed"></span>
-                            <span>Oct 2: Boba Drops Kickoff Meeting</span>
+                            <span>Oct 2: Boba Kickoff Meeting #1</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2.5 h-2.5 rounded bg-hcYellow"></span>
+                            <span>Oct 9: Boba Kickoff Meeting #2</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <span class="w-2.5 h-2.5 rounded bg-hcCyan"></span>
-                            <span>Oct 17: Web Dev & Domain Grant</span>
+                            <span>Oct 16: Web Dev & Custom Domain</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <span class="w-2.5 h-2.5 rounded bg-hcPurple"></span>
-                            <span>Oct 21: Halloween Game Jam</span>
+                            <span class="w-2.5 h-2.5 rounded bg-hcGreen"></span>
+                            <span>Oct 23: Sprig Game Dev</span>
                         </div>
                     </div>
                 </div>
@@ -605,7 +616,7 @@
                 <span class="bg-hcCyan/20 text-hcCyan text-xs font-bold px-3 py-1 rounded-full uppercase">School Information</span>
                 <h2 class="text-3xl font-extrabold text-white">Laurel Heights Secondary School</h2>
                 <p class="text-sm text-gray-300 max-w-2xl leading-relaxed">
-                    Laurel Heights Secondary School (WRDSB) is located in Waterloo, Ontario. Hack Club operates as an official student tech club under computer science room 3411.
+                    Laurel Heights Secondary School (WRDSB) is located in Waterloo, Ontario. Hack Club operates as an official student tech club in Room 3411.
                 </p>
             </div>
 
@@ -643,7 +654,7 @@
                             <i class="fa-solid fa-clock text-hcGreen mt-1"></i>
                             <div>
                                 <p class="text-white font-semibold">Frequency & Time</p>
-                                <p class="text-xs text-gray-400">Every 2 Fridays during Lunch (10:50 AM - 11:50 AM)</p>
+                                <p class="text-xs text-gray-400">Every Friday during Lunch (10:50 AM - 11:50 AM)</p>
                             </div>
                         </div>
                     </div>
@@ -676,7 +687,7 @@
                                 <tr class="bg-hcRed/20 border-t border-hcRed/40">
                                     <td class="py-2.5 font-bold text-hcRed">Lunch (Hack Club)</td>
                                     <td class="py-2.5 font-bold text-white">10:50 AM - 11:50 AM</td>
-                                    <td class="py-2.5 font-bold text-hcYellow">Room 3411 (Every 2 Fri)</td>
+                                    <td class="py-2.5 font-bold text-hcYellow">Room 3411 (Every Friday)</td>
                                 </tr>
                                 <tr>
                                     <td class="py-2 text-white font-semibold">Period C / D</td>
@@ -763,19 +774,15 @@
 
     <!-- JAVASCRIPT CONTROLLERS -->
     <script>
-        // Tab Switcher Controller
         function switchTab(tabId) {
-            // Hide all tabs
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => tab.classList.add('hidden'));
 
-            // Show target tab
             const target = document.getElementById('tab-' + tabId);
             if (target) {
                 target.classList.remove('hidden');
             }
 
-            // Update Nav styles
             const navButtons = document.querySelectorAll('.nav-btn');
             navButtons.forEach(btn => {
                 btn.classList.remove('text-white', 'bg-white/10', 'font-bold');
@@ -791,13 +798,11 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
 
-        // Modal Controllers
         function openRsvpModal() {
             document.getElementById('rsvp-modal').classList.remove('hidden');
         }
@@ -806,14 +811,13 @@
             document.getElementById('rsvp-modal').classList.add('hidden');
         }
 
-        // Close modal on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeRsvpModal();
         });
 
-        // Live Countdown Timer to Friday, Oct 2, 2026 @ 10:50 AM EDT
+        // Countdown Timer to Friday, Oct 2, 2026 @ 10:50 AM
         function initCountdown() {
-            const targetDate = new Date("2026-10-03T10:50:00").getTime();
+            const targetDate = new Date("2026-10-02T10:50:00").getTime();
 
             function updateTimer() {
                 const now = new Date().getTime();
@@ -842,7 +846,6 @@
             setInterval(updateTimer, 1000);
         }
 
-        // Start countdown on window load
         window.onload = function() {
             initCountdown();
         };
