@@ -1,167 +1,358 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laurel Heights Secondary School Hack Club | LHSS Hack Club</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/TheDuck7702/LHSS_Hack_Club/refs/heads/main/Hack%20CLub.png" type="image/png">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <head>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <title>Shayaan Shaikh</title>
-    </head>
+    <style>
+        /* Hack Club Brand Font: Phantom Sans */
+        @font-face {
+            font-family: 'Phantom Sans';
+            src:
+                url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff') format('woff'),
+                url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Phantom Sans';
+            src:
+                url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff') format('woff'),
+                url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2') format('woff2');
+            font-weight: normal;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Phantom Sans';
+            src:
+                url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff') format('woff'),
+                url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
 
-    <body class="bg-slate-950 text-white ">
+        body {
+            background-color: #0e0e12;
+            color: #f3f4f6;
+            font-family: 'Phantom Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#0e0e12] text-gray-100 antialiased selection:bg-[#ec3750] selection:text-white">
 
-        <nav class = "fixed bg-slate-800 text-white rounded-full shadow-lg top-4 left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-5 px-8 py-4">
-            <h1 class="text-2xl font-extrabold tracking-wide text-red-400">Shayaan</h1>
-            <a href="#Home" class="hover:text-red-400 transition">Home</a>
-            <a href="#About" class="hover:text-red-400 transition">About</a>
-            <a href="#Contact" class="hover:text-red-400 transition">Contact Us</a>
-        </nav>
-        
-        <!-- for the intro screen -->
-        <section id="Home" class="h-screen w-full flex items-center justify-center text-white">
-            <div>
-                <h1 class = " text-9xl font-extrabold font-[Allura]">شایان</h1>
-                <p class="text-lg text-slate-300 mt-8 italic">[ʃajːɑːn]</p>
-                <p class="" >:Adj: Inteligent, or one with purpose and heart. </p>
-            </div>
-        </section>
+    <!-- TOP HACK CLUB FLAG LOGO -->
+    <a href="https://hackclub.com" target="_blank" class="fixed top-0 left-4 sm:left-8 z-50 group transform transition-transform hover:translate-y-1">
+        <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club Flag" class="w-28 sm:w-36 drop-shadow-2xl">
+    </a>
 
-        <section id="About" class="bg-gradient-to-b from-slate-950 to-black px-4 pb-24 pt-28 sm:px-6">
-            <div class="mx-auto max-w-6xl space-y-10">
-                <header class="max-w-3xl space-y-4">
-                    <span class="inline-block rounded-md border border-red-400/30 bg-red-400/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-300">A little about me</span>
-                    <h2 class="text-4xl font-extrabold text-white sm:text-5xl">Curiosity, made tangible.</h2>
-                    <p class="text-base leading-relaxed text-slate-300 sm:text-lg">I'm Shayaan, a passionate and curious engineer based in Waterloo, Ontario. I love turning ideas into real things, using logic and creativity to build clean, efficient, and eco-centered solutions.</p>
-                </header>
-
-                <div class="grid gap-10 md:grid-cols-2 md:gap-8">
-                    <section aria-labelledby="passions-heading" class="space-y-5">
-                        <div class="flex items-center gap-3 border-b border-white/10 pb-3">
-                            <span class="font-mono text-sm font-bold text-yellow-300">01</span>
-                            <h3 id="passions-heading" class="text-2xl font-bold text-white">Passions &amp; hobbies</h3>
-                        </div>
-                        <article class="rounded-2xl border border-white/10 bg-slate-900/80 p-6">
-                            <p class="mb-2 text-xs font-bold uppercase tracking-wide text-cyan-300">Behind the camera</p>
-                            <h4 class="mb-2 text-xl font-bold text-white">Photography</h4>
-                            <p class="text-sm leading-relaxed text-slate-300">I enjoy taking photos of airplanes, family moments, and beautiful landscapes. I currently use an older Sony A6000 and hope to upgrade to a Sony Alpha A7II.</p>
-                        </article>
-                        <article class="rounded-2xl border border-white/10 bg-slate-900/80 p-6">
-                            <p class="mb-2 text-xs font-bold uppercase tracking-wide text-emerald-300">On repeat</p>
-                            <h4 class="mb-2 text-xl font-bold text-white">Music</h4>
-                            <p class="text-sm leading-relaxed text-slate-300">I listen to all kinds of music, especially rap, alternative soul, and 2000s R&amp;B. I also enjoy playing guitar and other band instruments.</p>
-                        </article>
-                    </section>
-
-                    <section aria-labelledby="projects-heading" class="space-y-5">
-                        <div class="flex items-center gap-3 border-b border-white/10 pb-3">
-                            <span class="font-mono text-sm font-bold text-red-300">02</span>
-                            <h3 id="projects-heading" class="text-2xl font-bold text-white">Projects &amp; experience</h3>
-                        </div>
-                        <article class="rounded-2xl border border-white/10 bg-slate-900/80 p-6">
-                            <p class="mb-2 text-xs font-bold uppercase tracking-wide text-red-300">Hardware · KiCad</p>
-                            <h4 class="mb-2 text-xl font-bold text-white">Nap-Pad</h4>
-                            <p class="text-sm leading-relaxed text-slate-300">A custom 60% mechanical keyboard designed in KiCad, with a compact layout, tactile knob, and Raspberry Pi Pico.</p>
-                        </article>
-                        <article class="rounded-2xl border border-white/10 bg-slate-900/80 p-6">
-                            <p class="mb-2 text-xs font-bold uppercase tracking-wide text-yellow-300">Workshop</p>
-                            <h4 class="mb-2 text-xl font-bold text-white">PCB Board Workshop</h4>
-                            <p class="text-sm leading-relaxed text-slate-300">Assembled and soldered a custom PCB, gaining hands-on experience with components, tools, and collaborative problem-solving.</p>
-                        </article>
-                        <article class="rounded-2xl border border-white/10 bg-slate-900/80 p-6">
-                            <p class="mb-2 text-xs font-bold uppercase tracking-wide text-cyan-300">Team project · AI</p>
-                            <h4 class="mb-2 text-xl font-bold text-white">Task-Topper</h4>
-                            <p class="text-sm leading-relaxed text-slate-300">Co-developed a custom GPT with a team of four, focused on student needs like tutoring, mental health support, and academic resources.</p>
-                        </article>
-                    </section>
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-[#0e0e12]/90 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo & Title Space -->
+            <div class="flex items-center space-x-3 ml-28 sm:ml-36 md:ml-40">
+                <img src="https://raw.githubusercontent.com/TheDuck7702/LHSS_Hack_Club/refs/heads/main/Hack%20CLub.png" alt="LHSS Hack Club Logo" class="w-10 h-10 object-contain drop-shadow-2xl">
+                <div>
+                    <h1 class="font-bold text-sm leading-tight text-white">Laurel Heights Hack Club</h1>
+                    <p class="text-xs text-[#8492a6]">Waterloo, ON • Room 3411</p>
                 </div>
             </div>
-        </section>
 
-        <section id="FAQ" class="bg-black px-4 py-20 sm:px-6">
-            <div class="mx-auto max-w-4xl">
-                <header class="mb-10 text-center">
-                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-red-300">Good to know</span>
-                    <h2 class="mt-3 text-4xl font-extrabold text-white sm:text-5xl">Frequently asked questions</h2>
-                    <p class="mt-4 text-slate-300">A few quick answers about me and the things I make.</p>
-                </header>
+            <!-- Navigation Links -->
+            <nav class="flex items-center space-x-1 font-medium text-sm">
+                <a href="#home" class="px-4 py-2 rounded-xl transition text-gray-300 hover:text-white hover:bg-white/5">Home</a>
+                <a href="#calendar" class="px-4 py-2 rounded-xl transition text-gray-300 hover:text-white hover:bg-white/5">Calendar</a>
+                <a href="#info" class="px-4 py-2 rounded-xl transition text-gray-300 hover:text-white hover:bg-white/5">LHSS Info</a>
+            </nav>
+
+            <!-- Actions Header Right -->
+            <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-1.5 bg-black/60 border border-[#ec3750]/40 px-3 py-1.5 rounded-xl font-mono text-xs">
+                    <span class="text-gray-400">Classroom:</span>
+                    <strong class="text-white select-all">ylslqxxt</strong>
+                </div>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScasSJDN6wrZGMUrW66VWYN4h4W7EwB9Pn-wc-Bocu4bx7vRQ/viewform" target="_blank" class="bg-gradient-to-r from-[#ec3750] to-[#b02035] hover:opacity-90 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-lg transition transform hover:scale-105 inline-block">
+                    RSVP Oct 2
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-20 relative z-10">
+
+        <!-- HOME SECTION -->
+        <section id="home" class="space-y-12 pt-4">
+            
+            <div class="relative z-10 bg-black/90 backdrop-blur-sm rounded-3xl p-6 sm:p-10 md:p-14 border border-white/20 shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
+                
+                <div class="space-y-6 max-w-2xl">
+                    <div class="inline-flex items-center space-x-2 bg-[#ec3750]/15 border border-[#ec3750]/40 text-[#ec3750] text-xs font-mono font-bold px-3 py-1.5 rounded-full">
+                        <span class="w-2 h-2 rounded-full bg-[#ec3750] animate-ping"></span>
+                        <span>Laurel Heights Secondary School • Waterloo, ON</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
+                        Learn coding.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
+                        Welcome to <strong>LHSS Hack Club</strong>! We are a community of students at Laurel Heights. We meet <strong>Friday at Lunch</strong> to build projects and hold workshops sponsored by Hack Club Foundation.
+                    </p>
+
+                    <!-- Quick Highlight Badges-->
+                    <div class="flex flex-wrap gap-2.5 text-xs sm:text-sm font-semibold pt-1">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScasSJDN6wrZGMUrW66VWYN4h4W7EwB9Pn-wc-Bocu4bx7vRQ/viewform" target="_blank" class="bg-zinc-900 border border-[#f1c40f]/40 text-[#f1c40f] px-3.5 py-2 rounded-xl hover:bg-white/10 transition">
+                            Boba Drops Kickoffs (Oct 2 & Oct 14)
+                        </a>
+                        <span class="bg-zinc-900 border border-[#33d6a6]/40 text-[#33d6a6] px-3.5 py-2 rounded-xl">
+                            Code: ylslqxxt
+                        </span>
+                        <span class="bg-zinc-900 border border-[#5bc0de]/40 text-[#5bc0de] px-3.5 py-2 rounded-xl">
+                            Room 3411 • Fri Lunch (10:50 - 11:50 AM)
+                        </span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-3">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScasSJDN6wrZGMUrW66VWYN4h4W7EwB9Pn-wc-Bocu4bx7vRQ/viewform" target="_blank" class="bg-[#ec3750] hover:bg-[#b02035] text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition text-center">
+                            RSVP for Boba Kickoff (Oct 2)
+                        </a>
+                        <a href="#calendar" class="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3.5 rounded-xl border border-white/20 transition text-center">
+                            View Meeting Calendar
+                        </a>
+                    </div>
+                </div>
 
                 <div class="space-y-4">
-                    <details class="group rounded-2xl border border-white/10 bg-slate-900/80 p-5 open:border-red-400/40">
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-white">
-                            What is Nap-Pad?
-                            <span class="text-red-300 transition group-open:rotate-45" aria-hidden="true">+</span>
-                        </summary>
-                        <p class="mt-4 leading-relaxed text-slate-300">It's a custom 60% mechanical keyboard designed in KiCad, with a tactile knob and a Raspberry Pi Pico.</p>
-                    </details>
+                    <div>
+                        <h3 class="text-lg font-extrabold text-white">Boba Drops Launch #1!</h3>
+                        <p class="text-xs text-gray-400 mt-1">Join us in Room 3411 during lunch for a chance to earn free boba, beginner coding workshops, and stickers!</p>
+                    </div>
 
-                    <details class="group rounded-2xl border border-white/10 bg-slate-900/80 p-5 open:border-red-400/40">
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-white">
-                            What do you like doing?
-                            <span class="text-red-300 transition group-open:rotate-45" aria-hidden="true">+</span>
-                        </summary>
-                        <p class="mt-4 leading-relaxed text-slate-300">I enjoy engineering projects, photography, listening to music, and playing guitar and other band instruments.</p>
-                    </details>
+                    <div class="pt-3 flex items-center justify-between text-xs text-gray-300 border-t border-white/10 font-mono">
+                        <span>Lunch (10:50 - 11:50 AM)</span>
+                        <span>Room 3411</span>
+                    </div>
+                </div>
 
-                    <details class="group rounded-2xl border border-white/10 bg-slate-900/80 p-5 open:border-red-400/40">
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-white">
-                            What camera do you use?
-                            <span class="text-red-300 transition group-open:rotate-45" aria-hidden="true">+</span>
-                        </summary>
-                        <p class="mt-4 leading-relaxed text-slate-300">I currently use a Sony A6000 and hope to upgrade to a Sony Alpha A7II.</p>
-                    </details>
+            </div>
 
-                    <details class="group rounded-2xl border border-white/10 bg-slate-900/80 p-5 open:border-red-400/40">
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-white">
-                            How can I get in touch?
-                            <span class="text-red-300 transition group-open:rotate-45" aria-hidden="true">+</span>
-                        </summary>
-                        <p class="mt-4 leading-relaxed text-slate-300">Send me an email using the contact link below.</p>
-                    </details>
+            <!-- Why Join Section -->
+            <div class="space-y-6 pt-6">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Why Join LHSS Hack Club?</h2>
+                    <p class="text-sm text-gray-400">Friday at Lunch in Room 3411. Build projects and get rewarded with tech grants sponsored by The Hack Club Foundation.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-[#16161e]/90 border border-white/10 p-6 rounded-2xl space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-[#ec3750]/20 text-[#ec3750] font-mono font-bold flex items-center justify-center text-sm">
+                            01
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Learn At Your Own Pace</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                            No prerequisites or prior coding experience needed!
+                        </p>
+                    </div>
+
+                    <div class="bg-[#16161e]/90 border border-white/10 p-6 rounded-2xl space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-[#f1c40f]/20 text-[#f1c40f] font-mono font-bold flex items-center justify-center text-sm">
+                            02
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Perks & Hardware</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                            Through Hack Club, submit your finished projects to get free PCB manufacturing grants, 3D printing grants, or other cool perks!
+                        </p>
+                    </div>
+
+                    <div class="bg-[#16161e]/90 border border-white/10 p-6 rounded-2xl space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-[#33d6a6]/20 text-[#33d6a6] font-mono font-bold flex items-center justify-center text-sm">
+                            03
+                        </div>
+                        <h3 class="text-lg font-bold text-white">LHSS Tech Community</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                            Connect with fellow Laurel Heights students, join worldwide Hack Club Slack channels, collaborate on hackathons, and build your technical portfolio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CALENDAR SECTION -->
+        <section id="calendar" class="space-y-6 pt-12">
+            <div class="bg-[#16161e]/90 border border-white/10 rounded-2xl p-6">
+                <div class="flex items-center space-x-2 mb-2">
+                    <span class="bg-[#ec3750]/20 text-[#ec3750] font-bold text-xs px-2.5 py-1 rounded-md">2026 Schedule</span>
+                    <span class="text-xs text-[#8492a6]">Every Friday @ Lunch</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">LHSS Hack Club Calendar</h2>
+
+                <p class="text-xs sm:text-sm text-gray-300 mt-1">
+                    Meetings take place <strong>Friday at Lunch</strong> 
+                    starting <strong>October 2nd</strong> in <strong>Room 3411</strong> (10:50 AM - 11:50 AM).
+                </p>
+            </div>
+
+            <!-- List Schedule -->
+            <div class="bg-[#16161e]/90 border border-white/10 rounded-2xl p-6 space-y-4">
+                <ul class="divide-y divide-white/10 text-sm">
+                    <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <span class="font-mono text-[#ec3750] font-bold mr-2">Oct 02</span>
+                            <strong class="text-white">Boba Drops Kickoff #1</strong>
+                            <span class="text-xs text-gray-300 block sm:inline sm:ml-2">Learn how Hack Club works, collect stickers, start your first website, and earn free Boba!</span>
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScasSJDN6wrZGMUrW66VWYN4h4W7EwB9Pn-wc-Bocu4bx7vRQ/viewform" target="_blank" class="text-xs bg-[#ec3750] text-white font-bold px-3 py-1 rounded hover:bg-[#b02035] transition self-start sm:self-auto inline-block">RSVP</a>
+                    </li>
+                    <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <span class="font-mono text-[#f1c40f] font-bold mr-2">Oct 09</span>
+                            <strong class="text-white">Boba Drops Workshop #2 & Project Polish</strong>
+                            <span class="text-xs text-gray-400 block sm:inline sm:ml-2">Second boba workshop session! Finish your project, submit for Boba vouchers, and submit.</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">Room 3411</span>
+                    </li>
+                    <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <span class="font-mono text-[#5bc0de] font-bold mr-2">Oct 16</span>
+                            <strong class="text-white">next meeting</strong>
+                            <span class="text-xs text-gray-400 block sm:inline sm:ml-2">_________</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">Room 3411</span>
+                    </li>
+                    <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <span class="font-mono text-[#33d6a6] font-bold mr-2">Oct 23</span>
+                            <strong class="text-white">______next____</strong>
+                            <span class="text-xs text-gray-400 block sm:inline sm:ml-2"></span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">Room 3411</span>
+                    </li>
+                    <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <span class="font-mono text-[#a633d6] font-bold mr-2">Oct 30</span>
+                            <strong class="text-white">_____</strong>
+                            <span class="text-xs text-gray-400 block sm:inline sm:ml-2">_____</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">Room 3411</span>
+                    </li>
+                </ul>
+                <p class="text-xs text-gray-500 pt-2 italic">updates posted weekly</p>
+            </div>
+        </section>
+
+        <!-- LHSS INFO SECTION -->
+        <section id="info" class="space-y-8 pt-12">
+            <div class="bg-[#16161e]/90 border border-white/10 rounded-2xl p-6 md:p-8 space-y-4">
+                <span class="bg-[#5bc0de]/20 text-[#5bc0de] text-xs font-bold px-3 py-1 rounded-full uppercase">School Information</span>
+                <h2 class="text-3xl font-extrabold text-white">Laurel Heights Secondary School</h2>
+                <p class="text-sm text-gray-300 max-w-2xl leading-relaxed">
+                    Laurel Heights Secondary School (LHSS) is located in Waterloo, Ontario. Hack Club operates as an official student club in Room 3411.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Location & Contact -->
+                <div class="bg-[#16161e]/90 border border-white/10 rounded-2xl p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white border-b border-white/10 pb-3">Club Meeting Details</h3>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <p class="text-white font-semibold">Address</p>
+                            <p class="text-xs text-gray-400">650 Laurelwood Dr, Waterloo, ON N2V 2V1</p>
+                        </div>
+
+                        <div>
+                            <p class="text-white font-semibold">Meeting Room</p>
+                            <p class="text-xs text-gray-400">Room 3411</p>
+                        </div>
+
+                        <div>
+                            <p class="text-white font-semibold">Google Classroom Code</p>
+                            <p class="text-xs font-mono font-bold text-[#f1c40f] select-all">ylslqxxt</p>
+                        </div>
+
+                        <div>
+                            <p class="text-white font-semibold">Frequency & Time</p>
+                            <p class="text-xs text-gray-400">Friday during Lunch (10:50 AM - 11:50 AM)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Schedule Table -->
+                <div class="bg-[#16161e]/90 border border-white/10 rounded-2xl p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white border-b border-white/10 pb-3">LHSS Daily Schedule</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead>
+                                <tr class="text-gray-400 border-b border-white/10">
+                                    <th class="pb-2">Period</th>
+                                    <th class="pb-2">Time</th>
+                                    <th class="pb-2">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5">
+                                <tr>
+                                    <td class="py-2 text-white font-semibold">Period A / B</td>
+                                    <td class="py-2 text-gray-300">8:15 AM - 9:30 AM</td>
+                                    <td class="py-2 text-gray-400">First Morning Block</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 text-white font-semibold">Period B / A</td>
+                                    <td class="py-2 text-gray-300">9:35 AM - 10:50 AM</td>
+                                    <td class="p-2 text-gray-400">Second Block</td>
+                                </tr>
+                                <tr class="bg-[#ec3750]/20 border-t border-[#ec3750]/40">
+                                    <td class="py-2.5 font-bold text-[#ec3750]">Lunch (Hack Club)</td>
+                                    <td class="py-2.5 font-bold text-white">10:50 AM - 11:50 AM</td>
+                                    <td class="py-2.5 font-bold text-[#f1c40f]">Room 3411 (Friday)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 text-white font-semibold">Period C / D</td>
+                                    <td class="py-2 text-gray-300">11:55 AM - 1:10 PM</td>
+                                    <td class="py-2 text-gray-400">Early Afternoon</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 text-white font-semibold">Period D / C</td>
+                                    <td class="py-2 text-gray-300">1:15 PM - 2:30 PM</td>
+                                    <td class="py-2 text-gray-400">Final Class</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
 
-<!--contact-->
-<section id="Contact" class="bg-gradient-to-b from-black to-slate-950 px-4 py-20 sm:px-6">
-    <div class="mx-auto max-w-5xl">
-        <div class="mx-auto mb-10 max-w-2xl text-center">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-red-300">Let's connect</span>
-            <h2 class="mt-3 text-4xl font-extrabold text-white sm:text-5xl">Contact me</h2>
-            <p class="mt-4 leading-relaxed text-slate-300">Have a question, an idea, or want to get in touch? Find me here.</p>
-        </div>
+    </main>
 
-        <div class="grid gap-4 sm:grid-cols-3">
-            <a href="mailto:shais5738@gmail.com" class="rounded-2xl border border-white/10 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-red-400/50">
-                <span class="text-sm font-bold uppercase tracking-wide text-red-300">Email</span>
-                <span class="mt-3 block break-all text-lg font-semibold text-white">shais5738@gmail.com</span>
-                <span class="mt-2 block text-sm text-slate-400">Send me a message</span>
-            </a>
-            <a href="https://www.linkedin.com/in/shayaan-shaikh-342078308/" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-white/10 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-red-400/50">
-                <span class="text-sm font-bold uppercase tracking-wide text-red-300">LinkedIn</span>
-                <span class="mt-3 block text-lg font-semibold text-white">Connect with me</span>
-                <span class="mt-2 block text-sm text-slate-400">View my professional profile</span>
-            </a>
-            <a href="https://theduck7702.github.io/Shayaan_Shaikh_770/" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-white/10 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-red-400/50">
-                <span class="text-sm font-bold uppercase tracking-wide text-red-300">Website</span>
-                <span class="mt-3 block text-lg font-semibold text-white">ShayaanShaikh.com</span>
-                <span class="mt-2 block text-sm text-slate-400">Visit my website</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<footer class="bg-gradient-to-b from-black to-slate-950">
-        <!--for fake copy right-->
-            <div class="text-center">
-                <h2 class="text-xl font-bold">Shayaan Ahmed Shaikh</h2>
-                <p class="text-slate-400 text-sm">© 2025 All rights reserved</p>
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-[#0e0e12] py-8 mt-12 text-xs text-gray-400 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="bg-[#ec3750] text-white font-bold px-2 py-0.5 rounded text-xs">LHSS Hack Club</div>
+                <span>Laurel Heights Secondary School • Waterloo, ON</span>
             </div>
-        <!--for footer button-->
-            <div class = "flex space-x-6">
-                <a href="#Home" class="hover:text-red-400">Home</a>
-                <a href="#About" class="hover:text-red-400">About</a>
-                <a href="#Contact" class="hover:text-red-400">Contact</a>
+            
+            <div class="flex items-center space-x-6 text-gray-400">
+                <span>Room 3411</span>
+                <span>Code: <strong class="text-white select-all">ylslqxxt</strong></span>
+                <a href="https://hackclub.com" target="_blank" class="hover:text-[#ec3750] transition">Hack Club Foundation</a>
             </div>
+        </div>
+    </footer>
 
-        </footer>
-    </body>
-
+</body>
 </html>
